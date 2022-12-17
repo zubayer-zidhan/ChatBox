@@ -3,7 +3,7 @@ import { useChatContext } from "stream-chat-react";
 import styled from "styled-components";
 
 const Form = styled.form`
-    border: 1px solid #999;
+    border: 2px solid #999;
     max-width: 500px;
     margin: 50px auto;
     padding: 20px;
@@ -21,11 +21,16 @@ const Form = styled.form`
         input,
         textarea {
             padding: 15px;
-            width: 100%;
+            width: 95%;
             background: transparent;
-            border: 1px solid #999;
+            border: none;
+            border-bottom: 2px solid #999;
             color: #333;
             font-size: 17px; 
+            transition : 0.5s;
+        }
+        input:focus{
+            width: 100%;
         }
     }
 
@@ -36,6 +41,7 @@ const Form = styled.form`
             background-color: black;
             color: white;
             width: 100%;
+            border-radius: 10px;
         }
     }
 `;

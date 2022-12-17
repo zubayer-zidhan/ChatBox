@@ -18,9 +18,15 @@ const Container = styled.div`
             padding: 10px 20px;
             cursor: pointer;
             border: 1px solid #333333;
+            border-radius : 10px;
 
             &.active {
                 background: #333333;
+                color: white;
+            }
+
+            &:hover {
+                background-color: #333;
                 color: white;
             }
         }

@@ -32,6 +32,7 @@ const Container = styled.div`
         height : max-content;
         &.str-chat-channel-list{
             float: none;
+            
         }
     }
     .channel-list{
@@ -39,6 +40,10 @@ const Container = styled.div`
         &__message{
             color: white;
         }
+    }
+
+    button{
+        width: 90%;
     }
 `;
 

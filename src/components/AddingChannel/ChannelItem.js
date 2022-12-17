@@ -33,6 +33,7 @@ const Item = styled.li`
         padding: 10px;
         color: #333;
         margin-left: auto;
+        border-radius: 10px;
 
         &:hover {
             background-color: #333;
