@@ -25,6 +25,7 @@ const Container = styled.div`
             background: none;
             border: none;
             cursor: pointer;
+            margin-left: 160px;
         }
     }
 

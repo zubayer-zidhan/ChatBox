@@ -18,6 +18,7 @@ const Container = styled.div`
   .right-column{
     flex : 1;
   }
+  
 
 `
 
@@ -90,7 +91,7 @@ function App() {
 
   return (
     <div>
-      <Chat client={chatClient} theme={'messaging light'}>
+      <Chat client={chatClient} theme={'messaging blue'}>
         <Container>
             <div class ="left-column">
                 <CustomChannelList onClickAdd={() => setAddingTeamChannel(true)} />
