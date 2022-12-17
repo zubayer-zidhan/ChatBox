@@ -1,7 +1,23 @@
 import { useState, useEffect } from "react";
 import { StreamChat } from "stream-chat";
-import { Channel, ChannelHeader, Chat, MessageInput, MessageList, Window } from "stream-chat-react";
+import { Channel, ChannelHeader, ChannelList, Chat, MessageInput, MessageList, Window } from "stream-chat-react";
 import 'stream-chat-react/dist/css/index.css';
+import styled from "styled-components";
+import CustomChannelList from "./components/CustomChannelList";
+
+const Container = styled.div`
+  
+  display : flex;
+
+  .left-column{
+    width: 300px;
+  }
+
+  .right-column{
+    flex : 1;
+  }
+
+`
 
 const API_KEY = process.env.REACT_APP_API_KEY
 
@@ -32,10 +48,10 @@ const getRandomUser = () => {
 
 function App() {
   const [chatClient, setChatClient] = useState(null);
-  const [channel,setChannel] = useState(null);
+  const [channel, setChannel] = useState(null);
 
   useEffect(() => {
-   async function initChat() {
+    async function initChat() {
       const client = StreamChat.getInstance(API_KEY);
 
       //connecting to user
@@ -44,7 +60,7 @@ function App() {
       client.connectUser(user, client.devToken(user.id));
 
       //creatiing Channels
-      const channel = client.channel('team','general',{
+      const channel = client.channel('team', 'general', {
         name: "General", //channel name
         image: "https://picsum.photos/id/75/200/300",
       })
@@ -61,8 +77,8 @@ function App() {
     initChat();
 
     //Cleanup function...once done..disconnect the user
-    return () =>{
-      if(chatClient) chatClient.disconnectUser();
+    return () => {
+      if (chatClient) chatClient.disconnectUser();
     }
   }, [])
 
@@ -71,13 +87,14 @@ function App() {
   return (
     <div>
       <Chat client={chatClient} theme={'messaging light'}>
-        <Channel channel = {channel}> 
-          <Window>
-            <ChannelHeader/>
-            <MessageList/>
-            <MessageInput/>
-          </Window>
-        </Channel>
+        <Container>
+          <div class ="left-column">
+             <CustomChannelList/>
+          </div>
+          <div class ="right-column">
+
+          </div>
+        </Container>
       </Chat>
     </div>
   );
