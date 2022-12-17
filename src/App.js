@@ -49,6 +49,8 @@ const getRandomUser = () => {
 };
 
 
+
+
 function App() {
   const [chatClient, setChatClient] = useState(null);
   const [channel, setChannel] = useState(null);
@@ -91,7 +93,7 @@ function App() {
 
   return (
     <div>
-      <Chat client={chatClient} theme={'messaging blue'}>
+      <Chat client={chatClient} theme={'messaging light'}>
         <Container>
             <div class ="left-column">
                 <CustomChannelList onClickAdd={() => setAddingTeamChannel(true)} />

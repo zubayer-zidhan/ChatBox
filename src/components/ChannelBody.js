@@ -1,4 +1,4 @@
-import { ChannelHeader, MessageInput, MessageList } from "stream-chat-react";
+import { ChannelHeader, MessageInput, MessageList, Window } from "stream-chat-react";
 import styled from "styled-components";
 
 
@@ -14,7 +14,6 @@ const Container = styled.div`
 
     .str-chat__list {
         height: calc(100vh - 70px);
-        background-color: blue;
     }
 
     .str-chat__input-flat-wrapper {
@@ -23,17 +22,17 @@ const Container = styled.div`
         bottom: 20px;
         width: 100%;
     }
-    ul{
-        margin: auto;
-    }
+    
 `
 
 export default function ChannelBody() {
     return (
         <Container>
+          <Window>
             <ChannelHeader />
             <MessageList />
             <MessageInput />
+          </Window>
         </Container>
     );
 }
