@@ -49,7 +49,7 @@ export default function ChannelItem({onJoin, channel}) {
     return (
         <Item>
             <div className="image">
-                <img src="channel?.data.?image" alt="" />
+                <img src={channel?.data?.image} alt="" />
             </div>
             <div>
                 <span className="name">{channel?.data?.name}</span>
