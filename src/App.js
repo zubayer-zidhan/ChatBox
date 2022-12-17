@@ -3,6 +3,8 @@ import { StreamChat } from "stream-chat";
 import { Channel, ChannelHeader, ChannelList, Chat, MessageInput, MessageList, Window } from "stream-chat-react";
 import 'stream-chat-react/dist/css/index.css';
 import styled from "styled-components";
+import AddingChannel from "./components/AddingChannel/AddingChannel";
+import ChannelBody from "./components/ChannelBody";
 import CustomChannelList from "./components/CustomChannelList";
 
 const Container = styled.div`
@@ -50,6 +52,8 @@ function App() {
   const [chatClient, setChatClient] = useState(null);
   const [channel, setChannel] = useState(null);
 
+  const [addingTeamChannel, setAddingTeamChannel] = useState(false);
+
   useEffect(() => {
     async function initChat() {
       const client = StreamChat.getInstance(API_KEY);
@@ -88,12 +92,18 @@ function App() {
     <div>
       <Chat client={chatClient} theme={'messaging light'}>
         <Container>
-          <div class ="left-column">
-             <CustomChannelList/>
-          </div>
-          <div class ="right-column">
-
-          </div>
+            <div class ="left-column">
+                <CustomChannelList onClickAdd={() => setAddingTeamChannel(true)} />
+            </div>
+            <div class ="right-column">
+            <Channel>
+                { addingTeamChannel ? ( 
+                    <AddingChannel onClose={() => setAddingTeamChannel(false)} /> 
+                    ) : ( 
+                    <ChannelBody /> 
+                )}
+            </Channel>
+            </div>
         </Container>
       </Chat>
     </div>
