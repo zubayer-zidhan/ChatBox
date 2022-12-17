@@ -1,6 +1,7 @@
 import { useState } from "react";
 import styled from "styled-components";
 import BrowseChannels from "./BrowseChannels";
+import CreateChannel from "./CreateChannel";
 
 const Container = styled.div`
     width: 100%;
@@ -49,14 +50,15 @@ export default function AddingChannel({onClose}) {
                     <button
                         className={activeTab === tab.id ? "active" : undefined}
                         key={tab.id}
-                        onclick={() => setActiveTab(tab.id)}
+                        onClick={() => setActiveTab(tab.id)}
                     >
                         {tab.name}
                     </button>
                 ))}
+                <button onClick={onClose}>Close</button>
             </div>
             {activeTab === "browse" && <BrowseChannels onClose={onClose} />}
-            {activeTab === "create" && <></>}
+            {activeTab === "create" && <CreateChannel onClose={onClose} /> }
         </Container>
     );
 }

@@ -49,7 +49,7 @@ export default function BrowseChannels({ onClose }) {
             ) : (
                 <ul>
                     {channels.map((c) => (
-                        <ChannelItem key={c.div} onJoin={joinChannel} channel={c} /> 
+                        <ChannelItem key={c.div} onJoin={joinChannel} channel={c} />
                     ))}
                 </ul>
             ) }
