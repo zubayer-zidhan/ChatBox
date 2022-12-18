@@ -15,8 +15,8 @@ export default function ChannelListContainer({loading, children}) {
     const loadingText = "Channels loading..."
 
     return (
-        <Container>
+            <Container>
             {loading? <div className="loading-text">{loadingText}</div> : children}
-        </Container>
+            </Container>
     )
 }

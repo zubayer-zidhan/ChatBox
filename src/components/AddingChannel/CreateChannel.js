@@ -55,7 +55,6 @@ export default function CreateChannel({onClose}) {
 
     const createChannel = (e) => {
         e.preventDefault();
-        console.log("Running after preventing defaults")
         const channelId = name.replace(/\s/g, "-").toLowerCase();
         
         const channel = client.channel("team", channelId, {

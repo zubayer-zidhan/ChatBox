@@ -66,7 +66,6 @@ export default function CustomChannelList({onClickAdd}){
             setChannelListKey(randomStr());
         })
     })
-
     return (
     <Container>
         <div className="header">
