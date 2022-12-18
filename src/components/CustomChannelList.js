@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { ChannelList, useChatContext } from "stream-chat-react";
+import { ChannelList, useChatContext, Window } from "stream-chat-react";
 import styled from "styled-components";
 import ChannelListContainer from "./ChannelListContainer";
 
