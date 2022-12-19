@@ -92,7 +92,7 @@ function App() {
 
   return (
     <div>
-      <Chat client={chatClient} theme={'messaging blue'}>
+      <Chat client={chatClient} theme={'messaging light'}>
         <Container>
             <div class ="left-column">
                 <CustomChannelList onClickAdd={() => setAddingTeamChannel(true)} />
